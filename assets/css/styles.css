@@ -10,17 +10,10 @@
 /* Set black background color, white text and some padding */
 body{
   background-color: #111111;
+  color:#E0E1DD;
 }
-footer {
-  color: white;
-  padding: 15px;
-}
-img{
-    width:400px;
-}
-body{
-    color:#E0E1DD;
-}
+
+
 hr{
     background-color: #ff651c;
 }
@@ -30,15 +23,7 @@ background-color:black ;
 color:#E0E1DD;
 }
 
-.card{
-  margin-top: 50px;
-  width:50%;
-  height:auto;
-  justify-content: center;
-  margin-left: 50px;
-  background-color: #1B263B;
-  color:#E0E1DD;
-}
+
 
 .container{background-color:#212121;
   padding:30px;
@@ -234,7 +219,7 @@ color:#E0E1DD;
 100%{transform:translateY(-5px)}
 }
   
-section{padding:15px 0;
+section{padding:15px 0 ;
   overflow:hidden;
   position:relative}
 
@@ -574,7 +559,7 @@ border:2px solid #888;
 portfolio .item{
   list-style:none;
   margin-bottom:20px;
-  padding:0
+  padding:0;
 }
 .portfolio  li{
   cursor:pointer;
@@ -674,3 +659,228 @@ portfolio .item{
         width:95%;
       }
     }
+    
+.contact .info-box{
+text-align:center;
+box-shadow:0 0 25px rgb(0 0 0 / 85%);
+padding:20px 0 30px 0;
+border-radius:10px;
+margin-top:20px}
+
+.contact .info-box i.fas{
+font-size:24px;
+color:#ff651c;
+border-radius:50%;
+padding:15px;
+background:#111}
+
+.contact .info-box h3{
+font-size:20px;
+color:#777;
+font-weight:700;
+margin:10px 0}
+
+.contact .info-box p{
+padding:0;
+line-height:24px;
+color:#fff;
+font-size:14px;
+margin-bottom:0}
+
+.contact .social-links{
+margin-top:15px;
+display:flex;
+justify-content:center}
+
+.contact .social-links a{
+font-size:18px;
+display:inline-block;
+color:#888;
+line-height:1;
+background:#111;
+margin:0 8px;
+transition:.3s;
+padding:14px;
+border-radius:50px}
+
+.contact .social-links a:hover{color:#fff;background:#ff651c}
+.email-form{
+box-shadow:0 0 25px rgb(0 0 0 / 85%);
+padding:27px;border-radius:5px}
+
+.email-form .error-message br+br{margin-top:25px}
+
+.email-form input,.email-form textarea{
+border-radius:0;
+font-size:14px;
+background:#212121;
+border:0}
+
+.email-form .form-control{
+background-color:#212121;
+border-radius:10px;
+box-shadow:0 0 10px rgb(0 0 0 / 85%);
+color:#fff}
+
+.form-group{margin-bottom:20px}
+
+.form-control:-webkit-autofill,.form-control:-webkit-autofill:active,.form-control:-webkit-autofill:focus,.form-control:-webkit-autofill:hover{
+-webkit-text-fill-color:#777!important;
+-webkit-transition:background-color 5000s ease-in-out 0s;
+transition:background-color 5000s ease-in-out 0s}
+
+.email-form input,.email-form textarea{
+border-radius:0;
+box-shadow:none;
+font-size:14px;
+color:#fff}
+
+.email-form input{padding:10px 15px}
+
+.email-form textarea{padding:20px 20px}
+
+.email-form button[type=submit]{
+background:#ff651c;
+border:0;
+padding:10px 24px;
+border:1px solid #ff651c;
+color:#fff;
+transition:.4s;
+border-radius:5px}
+
+.email-form button[type=submit]:hover{
+background:#212121;
+color:#fff}
+
+.map{border-radius:20px;overflow:hidden}
+
+.map iframe{width:100%;min-height:500px}
+
+/* Footer */
+
+#footer{
+  color:#fff;
+  font-size:14px;
+  text-align:center;
+  position:relative}
+  
+    
+      
+  #footer h3{font-size:36px;
+    font-weight:700;
+    color:#fff;
+    position:relative;
+    font-family:Lato,sans-serif;
+    padding:0;
+    margin:0 0 15px 0;
+  }
+#footer p{
+font-size:15;
+font-style:italic;
+padding:0;
+margin:0 0 20px 0}
+#footer .social-links{margin:0 0 20px 0}
+#footer .social-links a{font-size:18px;
+display:inline-block;
+background:#ff651c;
+color:#fff;
+line-height:1;
+padding:9px 0;
+margin:0 5px;
+border-radius:50%;
+text-align:center;
+width:36px;
+height:36px;
+transition:.3s}
+#footer .social-links a:hover{
+background:#fff;
+color:#ff651c;
+text-decoration:none}
+#footer .copyright{margin:0 0 5px 0}
+.carousel-control-prev-icon{
+background-color: #ff651c;
+color:#fff;
+}
+.carousel-control-next-icon{
+background-color: #ff651c;
+color:#fff;
+}
+.carousel-item{
+object-fit: cover;
+width:100%;
+height:100%;
+}
+.portfolio #portfolio-flters{
+list-style:none;margin-bottom:20px;padding:0}
+.portfolio #portfolio-flters li{
+cursor:pointer;
+display:inline-block;
+margin:0 10px 10px 10px;
+font-size:15px;
+font-weight:600;
+line-height:1;
+background:#ff651c;
+padding:7px 10px;
+text-transform:uppercase;
+color:#fff;
+transition:all .3s ease-in-out;
+border:2px solid #ff651c;
+border-radius:10px}
+.portfolio #portfolio-flters li.filter-active,.portfolio #portfolio-flters li:hover{
+color:#fff;
+background:#212121}
+.portfolio .portfolio-item{margin-bottom:30px}
+.portfolio .portfolio-item .portfolio-img{
+overflow:hidden;
+border-radius:20px;
+box-shadow:0 0 10px rgb(0 0 0 / 85%)}
+.portfolio .portfolio-item .portfolio-img img{transition:all .8s ease-in-out}
+.portfolio .portfolio-item .portfolio-info{
+opacity:0;position:absolute;
+left:12px;bottom:0;
+z-index:3;right:12px;
+border-radius:0 0 20px 20px;
+transition:all ease-in-out .3s;
+background:rgba(0,0,0,.5);
+padding:10px 15px}
+.portfolio .portfolio-item .portfolio-info h4{
+font-size:18px;
+color:#fff;
+font-weight:600;
+color:#fff;
+margin-bottom:0}
+.portfolio .portfolio-item .portfolio-info p{
+color:rgba(255,255,255,.8);
+font-size:14px;
+margin-bottom:0}
+.portfolio .portfolio-item .portfolio-info .details-link,.portfolio .portfolio-item .portfolio-info .preview-link{
+position:absolute;right:40px;
+font-size:24px;top:calc(50% - 18px);
+color:#fff;transition:.3s}
+.portfolio .portfolio-item .portfolio-info .details-link:hover,.portfolio .portfolio-item .portfolio-info .preview-link:hover{color:#ff651c}
+.portfolio .portfolio-item .portfolio-info .details-link{right:10px}
+.portfolio .portfolio-item:hover .portfolio-img img{transform:scale(1.2)}
+.portfolio .portfolio-item:hover .portfolio-info{opacity:1}
+.portfolio-details .portfolio-details-slider img{width:100%;border-radius:20px}
+.portfolio-details .portfolio-details-slider .swiper-pagination{
+margin-top:20px;position:relative}
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet{
+width:12px;height:12px;background-color:#fff;
+opacity:1;border:1px solid #ff651c}
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active{background-color:#ff651c}
+.portfolio-details .portfolio-info{
+padding:30px;box-shadow:0 0 25px rgb(0 0 0 / 85%);
+border-radius:20px}
+.portfolio-details .portfolio-info h3{
+font-size:22px;font-weight:700;
+margin-bottom:20px;padding-bottom:20px;
+border-bottom:1px solid #ff651c}
+.portfolio-details .portfolio-info ul{
+list-style:none;padding:0;
+font-size:15px;margin:0}
+.portfolio-details .portfolio-info ul li strong{color:#fff;padding-right:5px}
+.portfolio-details .portfolio-info ul li+li{margin-top:10px}
+.portfolio-details .portfolio-description{padding-top:30px}
+.portfolio-details .portfolio-description h2{
+font-size:26px;font-weight:700;margin-bottom:20px}
+.portfolio-details .portfolio-description p{padding:0}
