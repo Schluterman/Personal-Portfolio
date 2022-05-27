@@ -1,4 +1,4 @@
-function atvImg(){
+function atvImg() {
 	var d = document,
 		de = d.documentElement,
 		bd = d.getElementsByTagName('body')[0],
@@ -8,43 +8,43 @@ function atvImg(){
 		totalImgs = imgs.length,
 		supportsTouch = 'ontouchstart' in win || navigator.msMaxTouchPoints;
 
-	if(totalImgs <= 0){
+	if (totalImgs <= 0) {
 		return;
 	}
 
-	for(var l=0;l<totalImgs;l++){
+	for (var l = 0; l < totalImgs; l++) {
 
 		var thisImg = imgs[l],
 			layerElems = thisImg.querySelectorAll('.atvImg-layer'),
 			totalLayerElems = layerElems.length;
 
-		if(totalLayerElems <= 0){
+		if (totalLayerElems <= 0) {
 			continue;
 		}
 
-		while(thisImg.firstChild) {
+		while (thisImg.firstChild) {
 			thisImg.removeChild(thisImg.firstChild);
 		}
-	
+
 		var containerHTML = d.createElement('div'),
 			shineHTML = d.createElement('div'),
 			shadowHTML = d.createElement('div'),
 			layersHTML = d.createElement('div'),
 			layers = [];
 
-		thisImg.id = 'atvImg__'+l;
+		thisImg.id = 'atvImg__' + l;
 		containerHTML.className = 'atvImg-container';
 		shineHTML.className = 'atvImg-shine';
 		shadowHTML.className = 'atvImg-shadow';
 		layersHTML.className = 'atvImg-layers';
 
-		for(var i=0;i<totalLayerElems;i++){
+		for (var i = 0; i < totalLayerElems; i++) {
 			var layer = d.createElement('div'),
 				imgSrc = layerElems[i].getAttribute('data-img');
 
 			layer.className = 'atvImg-rendered-layer';
-			layer.setAttribute('data-layer',i);
-			layer.style.backgroundImage = 'url('+imgSrc+')';
+			layer.setAttribute('data-layer', i);
+			layer.style.backgroundImage = 'url(' + imgSrc + ')';
 			layersHTML.appendChild(layer);
 
 			layers.push(layer);
@@ -56,58 +56,58 @@ function atvImg(){
 		thisImg.appendChild(containerHTML);
 
 		var w = thisImg.clientWidth || thisImg.offsetWidth || thisImg.scrollWidth;
-		thisImg.style.transform = 'perspective('+ w*3 +'px)';
+		thisImg.style.transform = 'perspective(' + w * 3 + 'px)';
 
-		if(supportsTouch){
+		if (supportsTouch) {
 			win.preventScroll = false;
 
-	        (function(_thisImg,_layers,_totalLayers,_shine) {
-				thisImg.addEventListener('touchmove', function(e){
-					if (win.preventScroll){
+			(function (_thisImg, _layers, _totalLayers, _shine) {
+				thisImg.addEventListener('touchmove', function (e) {
+					if (win.preventScroll) {
 						e.preventDefault();
 					}
-					processMovement(e,true,_thisImg,_layers,_totalLayers,_shine);		
+					processMovement(e, true, _thisImg, _layers, _totalLayers, _shine);
 				});
-	            thisImg.addEventListener('touchstart', function(e){
-	            	win.preventScroll = true;
-					processEnter(e,_thisImg);		
+				thisImg.addEventListener('touchstart', function (e) {
+					win.preventScroll = true;
+					processEnter(e, _thisImg);
 				});
-				thisImg.addEventListener('touchend', function(e){
+				thisImg.addEventListener('touchend', function (e) {
 					win.preventScroll = false;
-					processExit(e,_thisImg,_layers,_totalLayers,_shine);		
+					processExit(e, _thisImg, _layers, _totalLayers, _shine);
 				});
-	        })(thisImg,layers,totalLayerElems,shineHTML);
-	    } else {
-	    	(function(_thisImg,_layers,_totalLayers,_shine) {
-				thisImg.addEventListener('mousemove', function(e){
-					processMovement(e,false,_thisImg,_layers,_totalLayers,_shine);		
+			})(thisImg, layers, totalLayerElems, shineHTML);
+		} else {
+			(function (_thisImg, _layers, _totalLayers, _shine) {
+				thisImg.addEventListener('mousemove', function (e) {
+					processMovement(e, false, _thisImg, _layers, _totalLayers, _shine);
 				});
-	            thisImg.addEventListener('mouseenter', function(e){
-					processEnter(e,_thisImg);		
+				thisImg.addEventListener('mouseenter', function (e) {
+					processEnter(e, _thisImg);
 				});
-				thisImg.addEventListener('mouseleave', function(e){
-					processExit(e,_thisImg,_layers,_totalLayers,_shine);		
+				thisImg.addEventListener('mouseleave', function (e) {
+					processExit(e, _thisImg, _layers, _totalLayers, _shine);
 				});
-	        })(thisImg,layers,totalLayerElems,shineHTML);
-	    }
+			})(thisImg, layers, totalLayerElems, shineHTML);
+		}
 	}
 
-	function processMovement(e, touchEnabled, elem, layers, totalLayers, shine){
+	function processMovement(e, touchEnabled, elem, layers, totalLayers, shine) {
 
 		var bdst = bd.scrollTop || htm.scrollTop,
 			bdsl = bd.scrollLeft,
-			pageX = (touchEnabled)? e.touches[0].pageX : e.pageX,
-			pageY = (touchEnabled)? e.touches[0].pageY : e.pageY,
+			pageX = (touchEnabled) ? e.touches[0].pageX : e.pageX,
+			pageY = (touchEnabled) ? e.touches[0].pageY : e.pageY,
 			offsets = elem.getBoundingClientRect(),
 			w = elem.clientWidth || elem.offsetWidth || elem.scrollWidth,
 			h = elem.clientHeight || elem.offsetHeight || elem.scrollHeight,
-			wMultiple = 320/w,
-			offsetX = 0.52 - (pageX - offsets.left - bdsl)/w,
-			offsetY = 0.52 - (pageY - offsets.top - bdst)/h,
+			wMultiple = 320 / w,
+			offsetX = 0.52 - (pageX - offsets.left - bdsl) / w,
+			offsetY = 0.52 - (pageY - offsets.top - bdst) / h,
 			dy = (pageY - offsets.top - bdst) - h / 2,
 			dx = (pageX - offsets.left - bdsl) - w / 2,
-			yRotate = (offsetX - dx)*(0.07 * wMultiple),
-			xRotate = (dy - offsetY)*(0.1 * wMultiple),
+			yRotate = (offsetX - dx) * (0.07 * wMultiple),
+			xRotate = (dy - offsetY) * (0.1 * wMultiple),
 			imgCSS = 'rotateX(' + xRotate + 'deg) rotateY(' + yRotate + 'deg)',
 			arad = Math.atan2(dy, dx),
 			angle = arad * 180 / Math.PI - 90;
@@ -116,34 +116,34 @@ function atvImg(){
 			angle = angle + 360;
 		}
 
-		if(elem.firstChild.className.indexOf(' over') != -1){
+		if (elem.firstChild.className.indexOf(' over') != -1) {
 			imgCSS += ' scale3d(1.07,1.07,1.07)';
 		}
 		elem.firstChild.style.transform = imgCSS;
-		
-		shine.style.background = 'linear-gradient(' + angle + 'deg, rgba(255,255,255,' + (pageY - offsets.top - bdst)/h * 0.4 + ') 0%,rgba(255,255,255,0) 80%)';
-		shine.style.transform = 'translateX(' + (offsetX * totalLayers) - 0.1 + 'px) translateY(' + (offsetY * totalLayers) - 0.1 + 'px)';	
+
+		shine.style.background = 'linear-gradient(' + angle + 'deg, rgba(255,255,255,' + (pageY - offsets.top - bdst) / h * 0.4 + ') 0%,rgba(255,255,255,0) 80%)';
+		shine.style.transform = 'translateX(' + (offsetX * totalLayers) - 0.1 + 'px) translateY(' + (offsetY * totalLayers) - 0.1 + 'px)';
 
 		var revNum = totalLayers;
-		for(var ly=0;ly<totalLayers;ly++){
+		for (var ly = 0; ly < totalLayers; ly++) {
 			layers[ly].style.transform = 'translateX(' + (offsetX * revNum) * ((ly * 2.5) / wMultiple) + 'px) translateY(' + (offsetY * totalLayers) * ((ly * 2.5) / wMultiple) + 'px)';
 			revNum--;
 		}
 	}
 
-	function processEnter(e, elem){
+	function processEnter(e, elem) {
 		elem.firstChild.className += ' over';
 	}
 
-	function processExit(e, elem, layers, totalLayers, shine){
+	function processExit(e, elem, layers, totalLayers, shine) {
 
 		var container = elem.firstChild;
 
-		container.className = container.className.replace(' over','');
+		container.className = container.className.replace(' over', '');
 		container.style.transform = '';
 		shine.style.cssText = '';
-		
-		for(var ly=0;ly<totalLayers;ly++){
+
+		for (var ly = 0; ly < totalLayers; ly++) {
 			layers[ly].style.transform = '';
 		}
 
@@ -154,34 +154,71 @@ function atvImg(){
 atvImg();
 
 
-let	list = document.querySelectorAll('.list');
-let itembox = document.querySelectorAll('.itembox');
-for (leti =0; i<list.length; i++){
-	list[i].addEventListener('click',function(){
-		for(let j = 0; j<list.length; j++){
-			list[j].classList.remove('active');
-			list[j].classList.add('hide');
-		}
-		this.classList.add('active');
-		let dataFilter = this.getAttribute('data-filter');
-		for( let k = 0; k<itembox.length; k++){
-			itembox[k].classList.remove('active');
-			itembox[k].classList.add('hide');
-			if(itembox[k].getAttribute('data-item') == dataFilter || 
-			dataFilter =="all"){
-				itembox[k].classList.remove('hide');
-				itembox[k].classList.add('active');
-			}
-		}
-	})
-}
+// code written by DIWAKARKASHYAP
 
-document.querySelectorAll('.wireframes img').forEach(image =>{
-	Image.onclick = () =>{
-		document.querySelector('.popup-image').style.display = 'block';
-		document.querySelector('.popup-image img').src = image.getAttribute('src');
+let list = document.querySelectorAll('.list');
+
+let itembox = document.querySelectorAll('.itembox');
+
+
+list.forEach(allList => {
+
+
+	allList.addEventListener("click", clickedList)
+
+
+	function clickedList() {
+
+		var nameList = allList.innerHTML
+
+		var makeClass = nameList.replace(/\s/g, "")
+
+		itembox.forEach(allItembox => {
+
+				
+				if (allItembox.classList.contains(makeClass)) {
+
+					allItembox.style.display = "block"
+
+
+				} else {
+
+					allItembox.style.display = "none"
+
+				}
+
+		}
+		)
+
 	}
 });
-document.querySelector('.popup-image span').onclick =() =>{
+
+
+// code written by DIWAKARKASHYAP 
+
+const imageParent = document.querySelectorAll('.wireframes img')
+
+const popupImage = document.querySelector('.popup-image')
+const imageInPopupImage = document.querySelector('.popup-image img')
+
+
+
+imageParent.forEach(image => {
+	image.addEventListener("click", showImg)
+
+	function showImg() {
+
+		popupImage.style.display = "block"
+
+		imageInPopupImage.src = image.getAttribute('src')
+
+
+
+	}
+});
+
+
+
+document.querySelector('.popup-image span').onclick = () => {
 	document.querySelector('.popup-image').style.display = 'none';
 }
