@@ -37,7 +37,9 @@
             .breadcrumbs h2{margin:0 0 10px 0}
             .testimonials .testimonial-item p{margin-bottom:0}
             .contact .email-form{margin-top:20px}
-            .background{height:701px}}
+            .background{height:701px}
+            
+        }
             @media only screen and (max-width:769px){
                 .hero-img{margin:20px auto}
                 .glitch-img-warp{margin:20px auto}
@@ -50,7 +52,7 @@
                 .breadcrumbs ol{display:block}
                 .breadcrumbs ol li{display:inline-block}
                 .background{height:601px}
-            
+                
             }
                 @media only screen and (max-width:576px)
                 {
@@ -85,7 +87,9 @@
                 .contact .email-form{margin-top:12px;padding:20px}
                 .contact .info-box{margin-top:12px;padding:20px}
                 .portfolio-details .portfolio-info{padding:15px}
-                .down-content h4{font-size:24px}.background{height:501px}}
+                .down-content h4{font-size:24px}.background{height:501px}
+                
+            }
                 @media only screen and (max-width:482px){
                     .resume .resume-item h5{padding:5px 10px;font-size:14px}
                     .about .content ul li{margin-bottom:8px}
@@ -95,8 +99,27 @@
                     .back-to-top{height:30px;width:30px}
                     .back-to-top i{font-size:14px}
                     .contact .email-form button[type=submit]{padding:8px 20px}
-                    
+                    iframe{
+                        width:482px;
+                        height:280px;
+                    }
                     }
                     @media only screen and (max-width:352px){
                         .portfolio-details .portfolio-description h2{font-size:20px}
-                        #footer h3{font-size:28px}}
+                        #footer h3{font-size:28px}
+                    
+                    
+                    }
+                    .iframe-container{
+                        position: relative;
+                        width:100%;
+                        padding-bottom:56.25%;
+                        height: 0;
+                    }
+                    .iframe-container iframe{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height:100%;
+                    }

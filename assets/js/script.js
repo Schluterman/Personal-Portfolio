@@ -154,33 +154,40 @@ function atvImg(){
 atvImg();
 
 
-let	list = document.querySelectorAll('.list');
-let itembox = document.querySelectorAll('.itembox');
-for (leti =0; i<list.length; i++){
-	list[i].addEventListener('click',function(){
-		for(let j = 0; j<list.length; j++){
-			list[j].classList.remove('active');
-			list[j].classList.add('hide');
-		}
-		this.classList.add('active');
-		let dataFilter = this.getAttribute('data-filter');
-		for( let k = 0; k<itembox.length; k++){
-			itembox[k].classList.remove('active');
-			itembox[k].classList.add('hide');
-			if(itembox[k].getAttribute('data-item') == dataFilter || 
-			dataFilter =="all"){
-				itembox[k].classList.remove('hide');
-				itembox[k].classList.add('active');
-			}
-		}
-	})
+const list = document.querySelectorAll('.list');
+const itemBox = document.querySelectorAll('.itembox');
+if(list.length){
+    list.forEach((item, index) => {
+        item.addEventListener('click', (e) => {
+            list.forEach(item => item.classList.remove('active'))
+            item.classList.add('active')
+            const dataFilter = item.getAttribute('data-filter');
+            if(dataFilter === 'all'){
+                itemBox.forEach(box => {
+                    box.classList.remove('display-none')
+                })
+            } else {
+                itemBox.forEach(box => {
+                    const dataItem = box.getAttribute('data-item');
+                    if(dataItem === dataFilter){
+                        box.classList.add('display-block')
+                        box.classList.remove('display-none')
+                    } else {
+                        box.classList.add('display-none')
+                        box.classList.remove('display-block')
+                    }
+                })
+            }
+            
+        })
+    })
 }
 
 document.querySelectorAll('.wireframes img').forEach(image =>{
-	Image.onclick = () =>{
-		document.querySelector('.popup-image').style.display = 'block';
-		document.querySelector('.popup-image img').src = image.getAttribute('src');
-	}
+    image.onclick = () =>{
+        document.querySelector('.popup-image').style.display = 'block';
+        document.querySelector('.popup-image img').src = image.getAttribute('src');
+    }
 });
 document.querySelector('.popup-image span').onclick =() =>{
 	document.querySelector('.popup-image').style.display = 'none';
