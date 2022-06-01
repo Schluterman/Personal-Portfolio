@@ -2,13 +2,13 @@
 {.hero-box h2{margin-bottom:30px}}
 @media only screen and (max-width:1199px)
 {section{padding:12px 0}
-.abput .about-img{margin-bottom:30px}
+.about .about-img{
+margin-bottom:30px;
+min-height:500px;
+margin-bottom:15px}
 .container{padding:24px}
-.about .about-img{min-height:500px;margin-bottom:15px}
 .hero-box h2{margin-bottom:20px}
 .background{height:901px}
-.services .icon-box{margin:12px 0}
-
 }
 @media only screen and (max-width:1024px){
     .pricing .box{padding:5px}
@@ -42,7 +42,7 @@
         }
             @media only screen and (max-width:769px){
                 .hero-img{margin:20px auto}
-                .glitch-img-warp{margin:20px auto}
+                .hero .decription{ position: relative; left:0; justify-content: center;}
                 .about .content ul li{margin-bottom:10px}
                 .about .content .count-box{margin-top:10px}
                 .about .skills-content{display:block}
@@ -57,7 +57,7 @@
                 @media only screen and (max-width:576px)
                 {
                 .hero-img{margin:15px auto}
-                .glitch-img-warp{margin:15px auto}
+                .hero .decription{ position: relative; left:0; justify-content: center;}
                 .container{padding:12px}section{padding:6px 0}
                 .resume .resume-title{margin:10px;font-size:24px}
                 .section-title{padding:30px 0 40px 0;}
@@ -91,6 +91,7 @@
                 
             }
                 @media only screen and (max-width:482px){
+                    .hero .decription{ position: relative; left:0; justify-content: center;}
                     .resume .resume-item h5{padding:5px 10px;font-size:14px}
                     .about .content ul li{margin-bottom:8px}
                     .about .content .count-box{margin-top:5px}
@@ -107,8 +108,7 @@
                     @media only screen and (max-width:352px){
                         .portfolio-details .portfolio-description h2{font-size:20px}
                         #footer h3{font-size:28px}
-                    
-                    
+                        .hero .decription{ position: relative; left:0; justify-content: center;}
                     }
                     .iframe-container{
                         position: relative;
