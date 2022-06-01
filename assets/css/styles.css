@@ -496,7 +496,7 @@ section{padding:15px 0 ;
   }
   .about .about-img:hover .image{transform:scale(1);transition:ease-in-out .3s}
   .about .image{
-    background:url("../img/portfoliophoto.jpg") center center no-repeat;
+    background:url("../img/compressed/portfoliophoto\ \(1\).jpg") center center no-repeat;
     background-size:cover;
     height:500px;
     display:block;
@@ -582,6 +582,10 @@ left:-9px;
 top:0;background:#fff;
 border:2px solid #888;
 }
+.services .row{
+   display: flex;
+  flex-wrap: wrap;
+} 
 .services .icon-box{
   padding:30px;
   position: relative;
