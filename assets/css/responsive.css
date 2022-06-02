@@ -7,12 +7,23 @@ margin-bottom:30px;
 min-height:500px;
 margin-bottom:15px}
 .container{padding:24px}
-.hero-box h2{margin-bottom:20px}
+.hero-box h1{margin-bottom:20px;}
 .background{height:901px}
+.services .icon-box{
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.hero .hero-box {
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
 }
 @media only screen and (max-width:1024px){
     .pricing .box{padding:5px}
-    .hero-box h2{margin-bottom:20px}
+    .hero-box h1{margin-bottom:20px;font-size:25px;}
     .background{height:801px}}
     @media only screen and (max-width:991px){
         #main{margin:0;width:100%}
@@ -24,7 +35,7 @@ margin-bottom:15px}
         #hero .container{margin-top:0}
         .hero-img{margin:30px auto}
         .glitch-img-warp{margin:30px auto}
-        .hero-box h2{margin-bottom:25px}
+        .hero-box h1{margin-bottom:25px;font-size:25px;}
         #header .social-links{display:none}
         #header{left:-300px}
         .mobile-nav-toggle{
@@ -38,7 +49,6 @@ margin-bottom:15px}
             .testimonials .testimonial-item p{margin-bottom:0}
             .contact .email-form{margin-top:20px}
             .background{height:701px}
-            
         }
             @media only screen and (max-width:769px){
                 .hero-img{margin:20px auto}
@@ -66,8 +76,7 @@ margin-bottom:15px}
                 .section-title span{display:none}
                 .section-title h2{font-size:30px;margin-bottom:200px}
                 .section-title p{padding-top: 40px;}
-                .hero-box h1{font-size:40px}
-                .hero-box h2{text-align:center;margin-bottom:30px}
+                .hero-box h1{text-align:center;margin-bottom:30px;font-size:25px;}
                 .about-img{margin-bottom:10px}
                 .about .content ul{margin-bottom:5px}
                 .resume-item p{margin-bottom:5px}
@@ -81,8 +90,6 @@ margin-bottom:15px}
                 .about .skills-content{margin-top:12px}
                 .about .content .count-box p{padding:5px 0 0 0}
                 .about .skills-content .progress{padding:0;height:50px}
-                .services .icon-box{padding:15px 0;margin:6px 0;
-                    margin-left:90px;}
                 .about .content .count-box span{font-size:24px}
                 .contact .email-form{margin-top:12px;padding:20px}
                 .contact .info-box{margin-top:12px;padding:20px}
