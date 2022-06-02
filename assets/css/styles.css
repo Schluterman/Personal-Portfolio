@@ -211,17 +211,11 @@ color:#E0E1DD;
     
   }
   
-  .hero-box h1{
-    margin:0 0 10px 0;
-    font-size:64px;
-    font-weight:700;
-    font-family:tahoma;
-    color:#fff;
-  }
+  
 
-  .hero-box h2{color:#eee;
+  .hero-box h1{color:#eee;
     margin-bottom:50px;
-    font-size:20px;
+    font-size:40px;
     font-weight:600;
     letter-spacing:1px;
     text-transform:uppercase}
@@ -568,16 +562,16 @@ top:0;background:#fff;
 border:2px solid #888;
 }
 .services .row{
-   display: flex;
+  display: flex;
   flex-wrap: wrap;
-  text-align: center;
-  justify-content: center;
+  margin-left: 15%;
+  margin-right: 15%;
 } 
 
 .services .icon-box{
+  display:flex;
   padding:30px;
   position: relative;
-  left:40px;
   overflow: hidden;
   border-radius: 20px;
   background: #111;
@@ -587,6 +581,7 @@ border:2px solid #888;
   border: 1px solid #fff;
   width:200px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .service .icon{
   margin: 0 auto 20px auto;
